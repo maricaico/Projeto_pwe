@@ -1,6 +1,7 @@
 {
   "name": "next0",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
@@ -11,13 +12,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "next": "^15.1.0"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.5.1",
-    "tailwindcss": "^3.4.17"
+    "@prisma/client": "^6.2.1",
+    "next": "^13.4.0",
+    "react-icons": "^5.4.0"
   }
 }
