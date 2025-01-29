@@ -50,11 +50,15 @@ Rodar o projeto em modo desenvolvimento:
 npm run dev
 
 
-Criar build para produção:  
+Criar build para produção:
+
+
 pnpm run build
 
 
-Iniciar servidor de produção:  
+Iniciar servidor de produção:
+
+
 pnpm start
 
 
