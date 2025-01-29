@@ -1,40 +1,21 @@
-'use client';
+import { FaArrowLeft } from 'react-icons/fa';
 
-import { useEffect, useState } from 'react';
-import { FaArrowLeft } from 'react-icons/fa'; // Ícone de voltar
-
-export default function DogDetailPage({ params }) {
+export default async function DogDetailPage({ params }) {
   const { id } = params;
-  const [breed, setBreed] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchBreedDetails = async () => {
-      setLoading(true);
-      setError(null);
-      try {
-        const res = await fetch(`https://api.thedogapi.com/v1/breeds`);
-        const data = await res.json();
-        const selectedBreed = data.find((b) => b.id.toString() === id);
+  let breeds = [];
+  try {
+    const res = await fetch('http://localhost:3000/api/dogs'); // Agora usando a API interna
+    breeds = await res.json();
+  } catch (error) {
+    console.error('Erro ao buscar dados:', error);
+  }
 
-        if (selectedBreed) {
-          setBreed(selectedBreed);
-        } else {
-          setError('Raça não encontrada.');
-        }
-      } catch (err) {
-        setError('Erro ao carregar detalhes da raça.');
-      } finally {
-        setLoading(false);
-      }
-    };
+  const breed = breeds.find((b) => b.id.toString() === id);
 
-    fetchBreedDetails();
-  }, [id]);
-
-  if (loading) return <p>Carregando...</p>;
-  if (error) return <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>;
+  if (!breed) {
+    return <p style={{ color: 'red', textAlign: 'center' }}>Raça não encontrada.</p>;
+  }
 
   return (
     <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif', backgroundColor: '#eaeaea' }}>
@@ -68,9 +49,22 @@ export default function DogDetailPage({ params }) {
         <p><strong>Peso:</strong> {breed.weight.metric} kg</p>
         <p><strong>Expectativa de vida:</strong> {breed.life_span}</p>
         <p><strong>Origem:</strong> {breed.origin || 'Desconhecida'}</p>
-        <p><strong>Grupo:</strong> {breed.group || 'Desconhecido'}</p>
-        <p><strong>Variações:</strong> {breed.variations ? breed.variations.join(', ') : 'Nenhuma'}</p>
       </div>
     </div>
   );
 }
+
+export async function generateStaticParams() {
+  let breeds = [];
+  try {
+    const res = await fetch('http://localhost:3000/api/dogs'); // Agora usando a API interna
+    breeds = await res.json();
+  } catch (error) {
+    console.error('Failed to fetch breeds:', error);
+  }
+
+  return breeds.map((breed) => ({
+    id: breed.id.toString(),
+  }));
+}
+

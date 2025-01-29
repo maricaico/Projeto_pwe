@@ -1,13 +1,13 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { FaHome, FaSearch } from 'react-icons/fa'; 
+import { FaHome, FaSearch } from 'react-icons/fa';
 
 export default function HomePage() {
   const [breeds, setBreeds] = useState([]);
   const [filteredBreeds, setFilteredBreeds] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -15,16 +15,13 @@ export default function HomePage() {
       setLoading(true);
       setError(null);
       try {
-        const res = await fetch('https://api.thedogapi.com/v1/breeds', {
-          headers: {
-            'x-api-key': 'live_pOQ2TiCXc83WSsu3Fa0GdlngIAPfxNBiJf6ss2McS17uuilgeOsXQzx0nSINXg1B',
-          },
-        });
+        const res = await fetch('/api/dogs'); // Chamando a API interna
         const data = await res.json();
         setBreeds(data);
         setFilteredBreeds(data);
       } catch (err) {
         setError('Erro ao carregar raças de cachorros.');
+        console.error('Failed to fetch breeds:', err);
       } finally {
         setLoading(false);
       }
@@ -38,6 +35,9 @@ export default function HomePage() {
     );
     setFilteredBreeds(filtered);
   }, [searchTerm, breeds]);
+
+  if (loading) return <p>Carregando...</p>;
+  if (error) return <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>;
 
   return (
     <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif', backgroundColor: '#eaeaea' }}>
@@ -84,8 +84,6 @@ export default function HomePage() {
         </div>
       </div>
       <h1 style={{ color: '#34495e', textAlign: 'center', marginTop: '10px' }}>Projeto Auauron e Mauauriana</h1>
-      {loading && <p>Carregando...</p>}
-      {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '20px', marginTop: '20px' }}>
         {filteredBreeds.map((breed) => (
           <a
@@ -118,4 +116,4 @@ export default function HomePage() {
       </div>
     </div>
   );
-}
+};
