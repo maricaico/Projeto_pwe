@@ -1,8 +1,8 @@
-# Nome do Projeto: PilatesSoft  
+# Nome do Projeto: PilatesPro  
 
 ## Descrição do Projeto  
 ### Detalhamento  
-O **Sistema de Gestão PilatesSoft** é uma solução desenvolvida para otimizar a administração de estúdios de Pilates de pequeno porte. Ele oferece funcionalidades como cadastro de instrutores e colaboradores, gerenciamento de clientes, registro dos serviços oferecidos, controle de horários e agendamento de aulas. Além disso, possibilita o acompanhamento de pagamentos e do progresso dos alunos. Seu principal objetivo é automatizar as operações diárias do estúdio, proporcionando mais eficiência e organização para a equipe e clientes.  
+O **Sistema de Gestão PilatesPro** é uma solução desenvolvida para otimizar a administração de estúdios de Pilates de pequeno porte. Ele oferece funcionalidades como cadastro de instrutores e colaboradores, gerenciamento de clientes, registro dos serviços oferecidos, controle de horários e agendamento de aulas. Além disso, possibilita o acompanhamento de pagamentos e do progresso dos alunos. Seu principal objetivo é automatizar as operações diárias do estúdio, proporcionando mais eficiência e organização para a equipe e clientes.  
 
 ## Equipe  
 
