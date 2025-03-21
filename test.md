@@ -12,7 +12,9 @@ O **Sistema de Gestão PilatesInspire** é uma solução desenvolvida para otimi
 - **Giovanna Kailany de Melo** - [Giovanna-Melo](https://github.com/Giovanna-Melo) 
 - **Maria Eloisa da Silva Santos** - [EL0ISA](https://github.com/EL0ISA) 
 - **Mariana dos Santos Batista Medeiros** - [maricaico](https://github.com/maricaico) 
-- **Virlania Micarla Medeiros Canuto** - [virlaniacanuto12](https://github.com/virlaniacanuto12)
+- **Virlânia Micarla Medeiros Canuto** - [virlaniacanuto12](https://github.com/virlaniacanuto12)
+
+## Primeiro Líder Técnico: Mariana
   
 
 ## Link para os repositórios  
