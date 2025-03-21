@@ -7,7 +7,7 @@ O **Sistema de Gestão PilatesInspire** é uma solução desenvolvida para otimi
 ## Equipe  
 
 ### Nome e usuário do GitHub  
-- **Aron da Silva Bezerra** - [maricaico](https://github.com/maricaico) 
+- **Aron da Silva Bezerra** - [aronslv](https://github.com/aronslv)
 - **Beatriz Vitoria da Costa** - [BeatrizVCosta](https://github.com/BeatrizVCosta)
 - **Giovanna Kailany de Melo** - [Giovanna-Melo](https://github.com/Giovanna-Melo) 
 - **Maria Eloisa da Silva Santos** - [EL0ISA](https://github.com/EL0ISA) 
